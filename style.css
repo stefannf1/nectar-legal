@@ -1,0 +1,85 @@
+/* Shared styling for Nectar's public legal pages.
+   Deliberately plain and self-contained — no fonts, scripts, or assets loaded
+   from anywhere else, so these pages stay reachable and readable forever. */
+
+:root {
+  --cream:  #F8F5EA;
+  --ink:    #1A1A1A;
+  --muted:  #5C5C5C;
+  --green:  #2D6B55;
+  --rule:   rgba(26, 26, 26, 0.12);
+  --warn-bg:     #FFF4E0;
+  --warn-border: #E8940A;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 22px 90px;
+}
+
+header { border-bottom: 1px solid var(--rule); padding-bottom: 26px; margin-bottom: 34px; }
+.brand { font-size: 15px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin: 0 0 10px; }
+
+h1 { font-size: 34px; line-height: 1.2; letter-spacing: -0.5px; margin: 0 0 12px; }
+h2 { font-size: 22px; letter-spacing: -0.2px; margin: 44px 0 12px; padding-top: 6px; }
+h3 { font-size: 17.5px; margin: 26px 0 8px; }
+
+.dates { color: var(--muted); font-size: 14.5px; margin: 0; }
+
+p, li { color: #262626; }
+ul, ol { padding-left: 22px; }
+li { margin-bottom: 7px; }
+
+a { color: var(--green); }
+
+strong { font-weight: 650; }
+
+/* The health disclaimer. It is the single most important thing on the page and
+   is styled to survive skim-reading. */
+.notice {
+  background: var(--warn-bg);
+  border-left: 5px solid var(--warn-border);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin: 26px 0;
+}
+.notice p:first-child { margin-top: 0; }
+.notice p:last-child  { margin-bottom: 0; }
+.notice h2 { margin-top: 0; }
+
+.callout {
+  background: rgba(45, 107, 85, 0.07);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 22px 0;
+}
+
+/* Sections that must be read as written — liability, arbitration, disclaimers.
+   Capitalised in the source text; this keeps them legible rather than shouty. */
+.legalese { font-size: 15.5px; letter-spacing: 0.01em; }
+
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 15.5px; }
+th, td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 650; background: rgba(45, 107, 85, 0.06); }
+
+.toc { background: #fff; border: 1px solid var(--rule); border-radius: 12px; padding: 18px 22px; margin: 30px 0 10px; }
+.toc h2 { margin: 0 0 10px; font-size: 16px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.toc ol { margin: 0; font-size: 15.5px; }
+
+footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 14.5px; }
+
+/* The pages are light by design — a legal document that changes appearance
+   between devices invites arguments about what the user was shown. */
